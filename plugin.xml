@@ -68,7 +68,11 @@
         <header-file src="src/ios/TapjoyEventPlugin.h" />
 
         <resource-file src="src/ios/Framework/Tapjoy.framework/Resources/TapjoyResources.bundle" />
+        <resource-file src="src/ios/Framework/Tapjoy.framework/Versions/A/Tapjoy" framework="true"/>
+
+        <!--
         <framework src="src/ios/Framework/Tapjoy.framework" custom="true"/>
+    -->
         <framework src="Security.framework"/>
         <framework src="CoreData.framework" />
         <framework src="EventKit.framework" />
