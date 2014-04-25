@@ -68,11 +68,11 @@
         <header-file src="src/ios/TapjoyEventPlugin.h" />
 
         <resource-file src="src/ios/Framework/Tapjoy.framework/Resources/TapjoyResources.bundle" />
-        <source-file src="src/ios/Framework/Tapjoy.framework/Versions/A/Tapjoy" framework="true" />
+        <source-file src="src/ios/Framework/Tapjoy.framework/Tapjoy" framework="true" />
 
-        <header-file src="src/ios/Framework/Tapjoy.framework/Versions/A/Headers/TJEvent.h"/>
-        <header-file src="src/ios/Framework/Tapjoy.framework/Versions/A/Headers/TapjoyConnectConstants.h" />
-        <header-file src="src/ios/Framework/Tapjoy.framework/Versions/A/Headers/Tapjoy.h" />
+        <header-file src="src/ios/Framework/Tapjoy.framework/Headers/TJEvent.h"/>
+        <header-file src="src/ios/Framework/Tapjoy.framework/Headers/TapjoyConnectConstants.h" />
+        <header-file src="src/ios/Framework/Tapjoy.framework/Headers/Tapjoy.h" />
 
         <!--
         <framework src="src/ios/Framework/Tapjoy.framework" custom="true"/>
