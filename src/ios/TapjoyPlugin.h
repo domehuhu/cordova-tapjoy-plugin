@@ -9,8 +9,8 @@
 
 #import <Cordova/CDVPlugin.h>
 #import <Foundation/Foundation.h>
-#import <Tapjoy.h>
-#import <TJEvent.h>
+#import "Tapjoy.h"
+#import "TJEvent.h"
 
 //EVENTS
 static NSString* const TJ_SEND_EVENT_COMPLETE = @"TJ_SEND_EVENT_COMPLETE";
