@@ -596,10 +596,14 @@
 
 - (void)createEvent:(CDVInvokedUrlCommand*)command
 {
+	NSLog(@"Create create event");
+
     NSString *guid = [command.arguments objectAtIndex:0];
     NSString *name = [command.arguments objectAtIndex:1];
     NSString *eventParameter = [command.arguments objectAtIndex:2];
-    
+
+	NSLog([NSString stringWithFormat:@"Create Event guid=%@, name=%@, eventParameter=%@", guid, name, eventParameter]);
+
     // Create dictionary if its empty
 	if (!_eventsDict)
 		_eventsDict = [[NSMutableDictionary alloc] init];
