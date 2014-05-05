@@ -170,11 +170,19 @@ typedef void (^tapPointsCompletion)(NSDictionary *parameters, NSError *error);
 + (NSString*)getVersion;
 
 /**
- * Dissmisses both offer wall and fullscreen ads.
+ * Dismisses both offer wall and fullscreen ads.
  *
  * @return n/a
  */
 + (void)dismissContent;
+
+/**
+ * Sets a dictionary of segmentation parameters for this user
+ *
+ * @param A dictionary of parameters. See http://tech.tapjoy.com for information about valid segment names to use
+ * @return n/a
+ */
++ (void)sendSegmentationParams:(NSDictionary*)params;
 
 @end
 
@@ -227,6 +235,8 @@ typedef void (^tapPointsCompletion)(NSDictionary *parameters, NSError *error);
 - (void)videoAdBegan;
 
 - (void)videoAdClosed;
+
+- (void)videoAdCompleted;
 
 - (void)videoAdError:(NSString*)errorMsg;
 
@@ -489,7 +499,7 @@ typedef void (^tapPointsCompletion)(NSDictionary *parameters, NSError *error);
  * @param delegate The class that implements the TJCVideoAdDelegate protocol.
  * @return n/a
  */
-+ (void)setVideoAdDelegate:(id<TJCVideoAdDelegate>)delegate TJC_DEPRECATION_WARNING(10.0);
++ (void)setVideoAdDelegate:(id<TJCVideoAdDelegate>)delegate;
 
 /**
  * Begins the caching process if auto caching is disabled.
