@@ -103,6 +103,23 @@ public class TapjoyPlugin extends CordovaPlugin implements TJEventCallback
 				com.tapjoy.TapjoyConnect.getTapjoyConnectInstance().enablePaidAppWithActionID(data.getString(0));
 				callbackContext.success();
 			}
+			else
+			if (action.equals("sendSegmentationParams"))
+			{
+				Object o = data.get(0);
+				Hashtable<String, Object> params = null;
+				
+				// data.get() returns a JSONObject for complex types. For now we assume this is a dictionary to be converted to hashtable (ex.segmentation params)
+				if(o instanceof JSONObject){
+					params = convertJSONToTable((JSONObject)o);
+					if(params != null)
+					{
+						com.tapjoy.TapjoyConnect.getTapjoyConnectInstance().sendSegmentationParams(params);
+					}	
+				}
+				
+				callbackContext.success();
+			}
 			//--------------------------------------------------------------------------------
 			// PPA
 			//--------------------------------------------------------------------------------
@@ -250,7 +267,7 @@ public class TapjoyPlugin extends CordovaPlugin implements TJEventCallback
 					@Override
 					public void videoStart()
 					{
-						callbackContext.success();
+						callbackContext.success("start");
 					}
 					
 					@Override
@@ -262,7 +279,7 @@ public class TapjoyPlugin extends CordovaPlugin implements TJEventCallback
 					@Override
 					public void videoComplete()
 					{
-						callbackContext.success();
+						callbackContext.success("complete");
 					}
 				});
 			}
